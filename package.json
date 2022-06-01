@@ -8,7 +8,9 @@
     "readstream": "node src/streams/read",
     "writestream": "node src/streams/write",
     "transform": "node src/streams/transform",
-    "read": "node src/fs/read"
+    "read": "node src/fs/read",
+    "compress": "node src/zip/compress",
+    "decompress": "node src/zip/decompress"
   },
   "repository": {
     "type": "git",
