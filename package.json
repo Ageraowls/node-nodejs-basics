@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "readstream": "node src/streams/read",
+    "writestream": "node src/streams/write",
+    "transform": "node src/streams/transform",
     "read": "node src/fs/read"
   },
   "repository": {
