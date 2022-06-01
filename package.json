@@ -10,7 +10,8 @@
     "transform": "node src/streams/transform",
     "read": "node src/fs/read",
     "compress": "node src/zip/compress",
-    "decompress": "node src/zip/decompress"
+    "decompress": "node src/zip/decompress",
+    "modules": "node src/modules/cjsToEsm.mjs"
   },
   "repository": {
     "type": "git",
