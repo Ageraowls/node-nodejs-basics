@@ -13,7 +13,8 @@
     "decompress": "node src/zip/decompress",
     "modules": "node src/modules/cjsToEsm.mjs",
     "env": "node src/cli/env.js",
-    "args": "node src/cli/args --propName value --prop2Name value2"
+    "args": "node src/cli/args --propName value --prop2Name value2",
+    "hash": "node src/hash/calcHash"
   },
   "repository": {
     "type": "git",

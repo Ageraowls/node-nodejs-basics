@@ -15,6 +15,7 @@
     "import/extensions": "off",
     "no-unused-vars": "warn",
     "no-restricted-syntax": "off",
-    "default-case": "off"
+    "default-case": "off",
+    "no-return-assign": "off"
   }
 }
