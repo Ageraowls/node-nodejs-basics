@@ -1,5 +1,6 @@
 import path, { dirname, sep } from 'path';
 import { release, version } from 'os';
+import fs from 'fs/promises';
 import http, { createServer as createServerHttp } from 'http';
 import { fileURLToPath } from 'url';
 import sayHi from './files/c.js';
@@ -12,9 +13,9 @@ const random = Math.random();
 let unknownObject;
 
 if (random > 0.5) {
-  unknownObject = path.join(__dirname, 'files,', 'a.json');
+  unknownObject = await fs.readFile(path.join(__dirname, 'files', 'a.json'), (err, data) => console.log(data.toString()));
 } else {
-  unknownObject = path.join(__dirname, 'files', 'b.json');
+  unknownObject = await fs.readFile(path.join(__dirname, 'files', 'b.json'), (err, data) => console.log(data.toString()));
 }
 
 console.log(`\nRelease ${release()}\n`);
