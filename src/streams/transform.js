@@ -10,7 +10,15 @@ export const transform = async () => {
       cb(null, `${reverseChunk}\n`);
     },
   });
-  pipeline(stdin, transformat, stdout, (err) => console.log(`Error ${err}`));
+  // prettier-ignore
+  pipeline(
+    stdin,
+    transformat,
+    stdout,
+    (err) => {
+      console.log(`Error ${err}`);
+    },
+  );
 };
 
 transform();

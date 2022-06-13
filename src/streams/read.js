@@ -7,10 +7,7 @@ export const read = async () => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
   const readableStream = fs.createReadStream(path.join(__dirname, 'files', 'fileToRead.txt'));
-
-  readableStream.on('data', (chunk) => {
-    stdout.write(chunk);
-  });
+  readableStream.pipe(stdout);
 };
 
 read();

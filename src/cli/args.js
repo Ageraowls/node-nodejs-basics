@@ -1,5 +1,23 @@
 export const parseArgs = () => {
-  const args = process.argv.slice(2);
+  const userInputArgs = process.argv.slice(2);
+
+  const cliArguments = userInputArgs.reduce((acc, arg, index, arr) => {
+    const valueCandidate = arr[index + 1];
+    if (valueCandidate && arg.startsWith('--')) {
+      const transformedArgs = arg.replace('--', '');
+      const cliArgumentsTransformed = `${transformedArgs} is ${valueCandidate}`;
+      acc.push(cliArgumentsTransformed);
+    }
+
+    return acc;
+  }, []);
+
+  console.log(cliArguments.join(', '));
+};
+
+parseArgs();
+
+/* const args = process.argv.slice(2);
   const firstValue = [];
   const secondValue = [];
   args.forEach((item) => {
@@ -11,7 +29,4 @@ export const parseArgs = () => {
     }
   });
 
-  console.log(`${firstValue[0]} is ${firstValue[1]}, ${secondValue[0]} is ${secondValue[1]}`);
-};
-
-parseArgs();
+  console.log(`${firstValue[0]} is ${firstValue[1]}, ${secondValue[0]} is ${secondValue[1]}`); */

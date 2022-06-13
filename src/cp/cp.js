@@ -7,10 +7,21 @@ export const spawnChildProcess = async (args) => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
   const filePath = path.join(__dirname, 'files', 'script.js');
-  const child = spawn('node', [filePath, args]);
-  child.stdout.pipe(stdout);
-  child.stdin.write('example text');
-  child.stdin.end();
+  const child = spawn('node', [filePath, ...args.split(' ')]);
+  let initiated = false;
+
+  process.stdin.on('data', (msg) => {
+    child.stdin.write(msg);
+  });
+
+  child.stdout.on('data', (data) => {
+    console.log(data.toString());
+
+    if (!initiated) {
+      console.log('Write anything to console...');
+      initiated = true;
+    }
+  });
 };
 
-spawnChildProcess(process.argv);
+spawnChildProcess('--first --second');

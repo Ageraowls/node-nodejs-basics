@@ -9,10 +9,7 @@ export const write = async () => {
   const writeableStream = fs.createWriteStream(path.join(__dirname, 'files', 'fileToWrite.txt'), { flags: 'a' });
 
   stdout.write('send some text:\n');
-  stdin.on('data', (data) => {
-    const str = data;
-    writeableStream.write(str);
-  });
+  stdin.pipe(writeableStream);
 
   process.on('exit', () => {
     stdout.write('\nbye-bye\n');
