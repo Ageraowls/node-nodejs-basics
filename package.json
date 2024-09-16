@@ -4,17 +4,41 @@
   "description": "This repository is the part of nodejs-assignments https://github.com/AlreadyBored/nodejs-assignments",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "streams:readstream": "node src/streams/read",
+    "streams:writestream": "node src/streams/write",
+    "streams:transform": "node src/streams/transform",
+    "fs:read": "node src/fs/read",
+    "fs:create": "node src/fs/create",
+    "fs:copy": "node src/fs/copy",
+    "fs:delete": "node src/fs/delete",
+    "fs:list": "node src/fs/list",
+    "fs:rename": "node src/fs/rename",
+    "zip:compress": "node src/zip/compress",
+    "zip:decompress": "node src/zip/decompress",
+    "modules:modules": "node src/modules/cjsToEsm.mjs",
+    "cli:env": "node src/cli/env.js",
+    "cli:args": "node src/cli/args --propName value --prop2Name value2",
+    "hash:hash": "node src/hash/calcHash",
+    "cp:cp": "node src/cp/cp"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlreadyBored/node-nodejs-basics.git"
   },
-  "keywords": ["nodejs", "assignments", "alreadybored"],
+  "keywords": [
+    "nodejs",
+    "assignments",
+    "alreadybored"
+  ],
   "author": "alreadybored",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AlreadyBored/node-nodejs-basics/issues"
   },
-  "homepage": "https://github.com/AlreadyBored/node-nodejs-basics#readme"
+  "homepage": "https://github.com/AlreadyBored/node-nodejs-basics#readme",
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
 }
